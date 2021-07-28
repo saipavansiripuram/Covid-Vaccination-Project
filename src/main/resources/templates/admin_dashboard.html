@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<br><br>
+Welcome <p th:text=${session.loggedUser.name}></p><br>
+<form method="post" th:action="@{/logout}">
+        <input type="submit" value="Logout"/>
+  </form>
+  <br><br>
+<p> Select an option : </p> 
+  <br><br>
+  <a th:href = @{/user/get/all}>Get list of registered users</a>
+  <br><br>
+  <a th:href = @{/centre/register}>Register a vaccination centre</a>
+  <br><br>
+  <a th:href = @{/centre/get/all}>See all centres</a>
+ 
+
+</body>
+</html>

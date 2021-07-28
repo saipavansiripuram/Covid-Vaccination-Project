@@ -1,0 +1,48 @@
+<!Doctype html>
+
+
+
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Register</title>
+</head>
+
+<body>
+<div th:if="${isUser}">
+<h2>User Registration</h2>
+<div>
+    <p th:text="${error}"></p>
+</div>
+<form method="post" th:action="@{/user/register}" th:object="${User}">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="name" th:field="${User.name}"/><br><br>
+    <label for="email">Age :</label>
+    <input type="text" id="age" name="age" th:field="${User.age}"/><br><br>
+    <label for="mobile">Aadhaar Number</label>
+    <input type="text" id="aadhar" name="aadhaar" th:field="${User.aadhaar}"/><br><br>
+    <label for="mobile">Password</label>
+    <input type="password" id="password" name="password" th:field="${User.password}"/><br><br>
+    <input type="submit" value="Register"/>
+</form>
+</div>
+<div th:if="${isAdmin}">
+<h2>Administrator Registration</h2>
+<div>
+    <p th:text="${error}"></p>
+</div>
+<form method="post" th:action="@{/admin/register}" th:object="${Admin}">
+    <label for="fullName">Full Name : </label>
+    <input type="text" id="fullName" name="name" th:field="${Admin.name}"/><br><br>
+    <label for="age">Age :</label>
+    <input type="text" id="age" name="age" th:field="${Admin.age}"/><br><br>
+    <label for="aadhaar_number">Aadhaar Number : </label>
+    <input type="text" id="aadhar" name="aadhaar" th:field="${Admin.aadhaar}"/><br><br>
+    <label for="password">Password : </label>
+    <input type="password" id="password" name="password" th:field="${Admin.password}"/><br><br>
+    <label for="code">Code :</label>
+    <input type="password" id="password" name="password" th:field="${Admin.adminCode}"/><br><br>
+    <input type="submit" value="Register"/>
+</form>
+</div>
+</body>
+</html>

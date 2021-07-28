@@ -1,0 +1,37 @@
+<!Doctype html>
+
+
+
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>User</title>
+</head>
+
+<body>
+
+<h2>Edit User</h2>
+<div>
+    <p th:text="${error}"></p>
+</div>
+<form method="post" th:action="@{/user/register}" th:object="${User}">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="name" th:field="${User.name}" th:value="${User.name}" disabled/><br><br>
+    <label for="age">Age :</label>
+    <input type="text" id="age" name="age" th:field="${User.age}" th:value="${User.age}" disabled/><br><br>
+    <label for="aadhaar">Aadhaar Number</label>
+    <input type="text" id="aadhar" name="aadhaar" th:field="${User.aadhaar}" th:value="${User.aadhaar}" disabled/><br><br>
+    <label for="status">Status : </label>" 
+    
+    <select th:field="${User.status}" id="status" name="status">
+					    <option th:each="i : ${statusList}" th:value="${i}" th:text="${i}" 
+					      th:selected="${i==User.status}"></option>
+	</select>
+	<select id="status" name="status">
+					    <option th:each="i : ${centreList}" th:value="${i.license}" th:text="${i.name}" 
+					      ></option>
+	</select>				
+    <input type="submit" value="Change Status"/>
+</form>
+
+</body>
+</html>

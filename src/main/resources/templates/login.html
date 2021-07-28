@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<h1 th:if="${isAdmin}">Administrator Login</h1>
+<h1 th:if="${isUser}">User Login</h1>
+<p th:text="${error}"></p>
+<form method="post" th:object="${User}" th:action="@{/user/login}" th:if="${isUser}">
+    <label for="username">Enter Aadhaar number :</label>
+    <input type="text" id="username" name="aadhaar"/>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"/>
+    <input type="submit" value="Login"/>
+</form>
+<form method="post" th:object="${Admin}" th:action="@{/admin/login}" th:if="${isAdmin}">
+    <label for="username">Enter Aadhaar number :</label>
+    <input type="text" id="username" name="aadhaar"/>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"/>
+    <input type="submit" value="Login"/>
+</form>
+
+
+</body>
+</html>
