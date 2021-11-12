@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Covid Vaccination Project</title>
+</head>
+<style th:inline="text">
+body{
+	background-image:url("https://www.linkpicture.com/q/Pink-Vaccination-Instagram-Post-1600-x-900-px-2.jpg");
+    height: 100%;
+    background-position: fit;
+    background-repeat: no-repeat;
+    background-size: cover;
+		}
+</style>
+
+
+<body >
+	<div class="heading">
+		<h1 align="center"></h1>
+	</div>
+	<br></br>
+    <br></br>
+    <br></br>
+    <br></br><br></br>
+    <br></br>
+	<div class="admin-section"><center>
+		<p><b/> ADMINISTRATOR </b></p>
+		<button><a th:href="@{/admin/login}">Login</a></button> <br><br>
+		<button><a th:href="@{/admin/register}">Register</a></button> <br><br>			 
+	</center></div>
+	<div class="user-section"><center>
+		<p><b> USER <b></p>
+		<button><a th:href="@{/user/login}">Login</a></button> <br><br>
+		<button><a th:href="@{/user/register}">Register</a></button><br><br>			 
+	</center></div>
+</body>
+</html>

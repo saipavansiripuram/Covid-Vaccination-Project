@@ -1,0 +1,55 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+            http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+        <persistence-unit name="vaccination_project">
+            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+            <properties>
+                <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+                <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/covidvaccination"/>
+                <property name="javax.persistence.jdbc.user" value="postgres"/>
+                <property name="javax.persistence.jdbc.password" value="3833"/>
+                <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+                <property name="hibernate.jdbc.lob.non_contextual_creation" value="true"></property>
+                <property name="hibernate.hbm2ddl.auto" value="update"/>
+                <property name="hibernate.show_sql" value="true"/>
+                <property name="hibernate.format_sql" value="true"/>
+<!--
+hbm2ddl.auto -> is used to allow hibernate to create(or drop) or alter tables
+             -> basically it is used to allow hibernate to run DDL commands against
+             -> the DBMS being used
+        values :
+               -> create : creates tables and overwrites existing tables
+               -> update : won't overwrite any existing table but update its column/table if
+                            needed
+               -> validate : won't create or drop anything...but will check if proper
+                            tables exist for ORM to work on
+               -> create-drop : it will create new table with each start of a session
+                            and drop them all when a session ends
+
+
+
+
+
+-->
+
+
+
+
+            </properties>
+        </persistence-unit>
+        
+
+</persistence>
+
+
+
+
+
+
+
+
+
+

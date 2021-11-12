@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+body{
+	background-image:url("https://www.linkpicture.com/q/1-1600-x-900-px.png");
+    height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+		}
+</style>
+<br>
+</br>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+</head>
+<body><center>
+<br><br>
+Welcome <p th:text=${session.loggedUser.name}></p><br>
+<form method="post" th:action="@{/logout}">
+        <input type="submit" value="Logout"/>
+  </form>
+
+</center>
+</body>
+</html>
