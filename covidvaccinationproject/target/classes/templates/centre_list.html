@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>List of registered centres</h2>
+<p th:if="${isEmpty}">No users to show</p>
+<table th:if="not ${isEmpty}">
+  <tr>
+    <th>License Number</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Pin Code</th>
+    <th>Number of users to be vaccinated</th>
+  </tr>
+  <tr th:each="centre : ${centre_list}">
+    <td th:text="${centre.license}"></td>
+    <td th:text="${centre.name}"></td>
+    <td th:text="${centre.address}"></td>
+    <td th:text="${centre.pin_code}"></td>
+    <td th:text="${centre.user_count}"></td>
+  </tr>
+  
+</table>
+
+</body>
+</html>

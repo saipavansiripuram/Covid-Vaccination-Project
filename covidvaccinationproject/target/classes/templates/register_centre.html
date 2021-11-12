@@ -1,0 +1,22 @@
+<!Doctype html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Register Vaccination Centre</title>
+</head>
+
+<body>
+
+<h2>Centre Registration</h2>    
+
+<form method="post" th:action="@{/centre/register}" th:object="${Centre}">
+    <label for="name">Name :</label>
+    <input type="text" id="name" name="name" th:field="${Centre.name}"/><br><br>
+    <label for="address">Address :</label>
+    <input type="text" id="address" name="address" th:field="${Centre.address}"/><br><br>
+    <label for="pin_code">Pin Code : </label>
+    <input type="text" id="pin_code" name="pin_code" th:field="${Centre.pin_code}"/><br><br>
+    <input type="submit" value="Register"/>
+</form>
+
+</body>
+</html>

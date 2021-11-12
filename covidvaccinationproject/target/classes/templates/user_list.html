@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>List of registered users</h2>
+<p th:if="${isEmpty}">No users to show</p>
+<table th:if="not ${isEmpty}">
+  <tr>
+    <th>Aadhaar Number</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Vaccination Centre</th>
+    <th>Action</th>
+  </tr>
+  <tr th:each="user : ${user_list}">
+    <td th:text="${user.aadhaar}"></td>
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.status}"></td>
+    <td th:text="${user.centre}"></td>
+    <td><a th:href="@{/user/edit/{id}(id=${user.aadhaar})}">Edit</a>
+  </tr>
+  
+</table>
+
+</body>
+</html>
